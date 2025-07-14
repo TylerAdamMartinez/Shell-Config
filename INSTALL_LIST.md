@@ -86,7 +86,7 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **JSX/TSX** | `typescript-language-server` | `npm install -g typescript typescript-language-server` |
 | **Kotlin** | `kotlin-language-server` | `brew install kotlin-language-server` (macOS) / `sdk install kotlin` (Linux) |
 | **Markdown** | `marksman` | `brew install marksman` (macOS) / `cargo install marksman` (Linux) |
-| **Python** | `pyright` | `npm install -g pyright` |
+| **Python** | `ruff` | `pip install ruff` |
 | **Rust** | `rust-analyzer` | `rustup component add rust-analyzer` |
 | **TOML** | `taplo` | `cargo install taplo-cli --features lsp` |
 | **YAML** | `yaml-language-server` | `npm install -g yaml-language-server` |
