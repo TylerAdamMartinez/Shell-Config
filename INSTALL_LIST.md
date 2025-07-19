@@ -112,7 +112,30 @@ Some tools require a **Nerd Font** for proper icon support.
    ```
 4. **Change your terminal font** to use the new Nerd Font.
 
----
+### Configuración para Teclado Español
+
+| Aplicación  | Descripción                                        | Comando de instalación                                              |
+| ----------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| **Espanso** | Text expander for easy Spanish accents and phrases | `brew install espanso` (macOS) / `sudo apt install espanso` (Linux) |
+
+
+#### Espanso Configuration
+Once installed, you’ll need to set up Espanso with your preferred shortcuts.
+
+📌 Go to:  
+`~/.config/espanso/match/base.yml`  
+in this repository to get the common Spanish accents and phrase configurations I use.  
+
+After updating the `base.yml`, reload Espanso:
+
+```bash
+espanso restart
+```
+Now you'll be able to type accented letters and Spanish phrases with simple triggers (like :a → á, :gracias → ¡Gracias!).
+
+
+--- 
+
 
 ### Final Step
 After installing everything, restart your terminal to ensure the changes take effect.
