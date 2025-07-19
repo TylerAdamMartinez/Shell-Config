@@ -62,7 +62,13 @@ matches:
     replace: "Ú"
   - trigger: ":N"
     replace: "Ñ"
-
+    
+  # Inverted Punctuation
+  - trigger: ":?"
+    replace: "¿"
+  - trigger: ":!"
+    replace: "¡"
+    
   # Common Spanish Phrases
   - trigger: ":quepasa"
     replace: "¿Qué pasa?"
