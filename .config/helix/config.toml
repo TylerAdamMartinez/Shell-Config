@@ -25,6 +25,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+git-ignore = false
 
 [editor.lsp]
 auto-signature-help = false
