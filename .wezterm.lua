@@ -22,4 +22,7 @@ return {
     foreground = '#d8d8d8',
     background = '#191919',
   },
+  
+  enable_tab_bar = false,
+  window_close_confirmation = "NeverPrompt",
 }
