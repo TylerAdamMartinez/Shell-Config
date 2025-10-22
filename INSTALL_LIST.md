@@ -60,6 +60,8 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Fd** | Faster `find` alternative | `cargo install fd-find` |
 | **Ripgrep (rg)** | Faster search tool | `cargo install ripgrep` |
 | **Procs** | Modern process viewer | `cargo install procs` |
+| **Posting** | TUI for api requests testing | `brew install posting` |
+| **Oxker** | TUI for managing docker containers | `cargo install oxker` |
 | **Ghq** | Repository manager | `brew install ghq` (macOS) / `go install github.com/x-motemen/ghq@latest` (Linux) |
 | **Peco** | Interactive filtering CLI tool | `brew install peco` (macOS) / `sudo apt install peco` (Linux) |
 
