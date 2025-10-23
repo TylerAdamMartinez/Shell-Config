@@ -19,7 +19,7 @@
 [alias]
 	co = checkout
 	d = diff
-    a = add
+	a = add
 	aa = add --all
 	b = branch
 	ba = branch -a
