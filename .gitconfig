@@ -19,6 +19,8 @@
 [alias]
 	co = checkout
 	d = diff
+    a = add
+	aa = add --all
 	b = branch
 	ba = branch -a
 	cm = commit -v
