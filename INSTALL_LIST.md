@@ -64,6 +64,8 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Oxker** | TUI for managing docker containers | `cargo install oxker` |
 | **Ghq** | Repository manager | `brew install ghq` (macOS) / `go install github.com/x-motemen/ghq@latest` (Linux) |
 | **Peco** | Interactive filtering CLI tool | `brew install peco` (macOS) / `sudo apt install peco` (Linux) |
+| **ffprobe** | Inspect media metadata (part of FFmpeg) | `brew install ffmpeg` (macOS) / `sudo apt install ffmpeg` (Linux) |
+| **pdftoppm** | Convert PDF pages to images (PNG/JPEG) from Poppler | `brew install poppler` (macOS) / `udo apt install poppler-utils` (Linux) |
 
 ### Node.js Version Manager
 | Tool  | Description | Installation |
