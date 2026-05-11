@@ -49,8 +49,6 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Eza** | Modern `ls` replacement | `cargo install eza` |
 | **Bat** | Enhanced `cat` command | `cargo install bat` |
 | **Yazi** | TUI-based file explorer | `brew install yazi` |
-| **Htop** | An interactive process viewer | `brew install htop` |
-| **Dust** | visual representation of disk usage | `cargo install du-dust` |
 | **Starship** | Cross-shell prompt | `cargo install starship --locked` |
 
 ### Productivity & Navigation
@@ -67,6 +65,9 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Peco** | Interactive filtering CLI tool | `brew install peco` (macOS) / `sudo apt install peco` (Linux) |
 | **ffprobe** | Inspect media metadata (part of FFmpeg) | `brew install ffmpeg` (macOS) / `sudo apt install ffmpeg` (Linux) |
 | **pdftoppm** | Convert PDF pages to images (PNG/JPEG) from Poppler | `brew install poppler` (macOS) / `udo apt install poppler-utils` (Linux) |
+| **Htop** | An interactive process viewer | `brew install htop` |
+| **Dust** | visual representation of disk usage | `cargo install du-dust` |
+| **Bottom** | visual representation of disk usage | `cargo install bottom` |
 
 ### Node.js Version Manager
 | Tool  | Description | Installation |
