@@ -50,6 +50,7 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Bat** | Enhanced `cat` command | `cargo install bat` |
 | **Yazi** | TUI-based file explorer | `brew install yazi` |
 | **Htop** | An interactive process viewer | `brew install htop` |
+| **Dust** | visual representation of disk usage | `cargo install du-dust` |
 | **Starship** | Cross-shell prompt | `cargo install starship --locked` |
 
 ### Productivity & Navigation
