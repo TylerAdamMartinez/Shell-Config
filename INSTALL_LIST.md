@@ -48,7 +48,7 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **Zoxide** | Smarter `cd` command (jump to directories quickly) | `cargo install zoxide` |
 | **Eza** | Modern `ls` replacement | `cargo install eza` |
 | **Bat** | Enhanced `cat` command | `cargo install bat` |
-| **Yazi** | TUI-based file explorer | `brew install yazi` |
+| **Yazi** | TUI-based file explorer | `brew install yazi` | `cargo install --force yazi-build` |
 | **Starship** | Cross-shell prompt | `cargo install starship --locked` |
 
 ### Productivity & Navigation
