@@ -46,7 +46,7 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | Tool  | Description | Installation |
 |--------|------------|--------------|
 | **Zoxide** | Smarter `cd` command (jump to directories quickly) | `cargo install zoxide` |
-| **Exa** | Modern `ls` replacement | `cargo install exa` |
+| **Eza** | Modern `ls` replacement | `cargo install eza` |
 | **Bat** | Enhanced `cat` command | `cargo install bat` |
 | **Yazi** | TUI-based file explorer | `brew install yazi` |
 | **Htop** | An interactive process viewer | `brew install htop` |
