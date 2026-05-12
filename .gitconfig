@@ -26,7 +26,6 @@
 	cm = commit -v
 	ss = status -s
 	ll = log --oneline --graph --decorate --all
-	aa = add -A
 	ap = "!f() { git status --short | peco | awk '{print $2}' | xargs -o -I{} git add -p -- {}; }; f"
 	ph = push
 	pl = pull
