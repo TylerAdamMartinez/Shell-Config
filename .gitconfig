@@ -26,7 +26,7 @@
 	cm = commit -v
 	ss = status -s
 	ll = log --oneline --graph --decorate --all
-	ap = "!f() { git status --short | peco | awk '{print $2}' | xargs -o -I{} git add -p -- {}; }; f"
+	ap = "!f() { git status --short | sk | choose 1 | xargs -o -I{} git add -p -- {}; }; f"
 	ph = push
 	pl = pull
 	pp = !git pull && git push
@@ -45,4 +45,3 @@
 
 [ghq]
 	root = ~/.ghq
-
