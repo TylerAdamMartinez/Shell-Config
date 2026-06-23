@@ -1,0 +1,47 @@
+[workspace]
+resolver = "2"
+
+[workspace.metadata.shell-config.cargo-tools]
+# Cargo utilities
+cargo-binstall = "Install prebuilt Cargo binaries when available"
+cargo-update = "Update installed Cargo binaries"
+cargo-edit = "Add, remove, and upgrade Cargo dependencies from the CLI"
+cargo-nextest = "Fast Rust test runner"
+cargo-watch = "Run Cargo commands when files change"
+
+# Shell and navigation
+zoxide = "Smarter cd"
+eza = "Rust replacement for ls"
+bat = "Rust replacement for cat with syntax highlighting"
+starship = "Cross-shell prompt"
+zellij = "Terminal workspace and multiplexer"
+fd-find = "Rust replacement for find"
+ripgrep = "Rust replacement for grep"
+ripgrep_all = "Search PDFs, archives, docs, and more with ripgrep"
+television = "Rust fuzzy finder and workspace navigator"
+skim = "Rust fuzzy finder for classic filter workflows"
+yazi-fm = "Terminal file manager"
+yazi-cli = "Yazi helper CLI"
+
+# Git and development
+git-delta = "Better git diff pager"
+just = "Command runner"
+mise = "Runtime and tool version manager"
+sd = "Rust replacement for sed-style substitutions"
+xh = "Rust HTTP client inspired by HTTPie"
+hyperfine = "Command-line benchmarking"
+tokei = "Code statistics"
+tealdeer = "Fast tldr client"
+choose = "Human-friendly cut/awk alternative"
+grex = "Generate regular expressions from examples"
+
+# System tools
+procs = "Rust replacement for ps"
+bottom = "System monitor"
+du-dust = "Rust replacement for du"
+oxker = "Docker container TUI"
+macchina = "Rust system information fetcher"
+
+# Editor support
+marksman = "Markdown language server"
+taplo-cli = "TOML formatter and language server"
