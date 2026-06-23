@@ -26,26 +26,14 @@ switch (uname)
         source (dirname (status --current-filename))/config-windows.fish
 end
 
-# Run neofetch on startup
-if type -q neofetch
-    neofetch
+# Run a system summary on startup, preferring Rust tools.
+if type -q macchina
+    macchina
+else if type -q fastfetch
+    fastfetch
 end
 
-function update_everything_once_a_day
-    set -l stamp_dir "$HOME/.cache/fish"
-    set -l stamp_file "$stamp_dir/last-update"
-    set -l today (date +%F)
-
-    mkdir -p "$stamp_dir"
-
-    if test -f "$stamp_file"; and test (cat "$stamp_file") = "$today"
-        return
-    end
-
-    echo "$today" > "$stamp_file"
-
-    echo "Running daily updates..."
-
+function update-tools --description 'Update Homebrew and Cargo-installed CLI tools'
     if type -q brew
         brew update
         brew upgrade
@@ -57,9 +45,5 @@ function update_everything_once_a_day
         cargo install-update --all --locked
     end
 
-    echo "Daily updates finished."
-end
-
-if status is-interactive
-    update_everything_once_a_day
+    echo "Tool updates finished."
 end
