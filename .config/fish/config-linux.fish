@@ -1,8 +1,9 @@
 # ~/.config/fish/config-linux.fish
 
-# Initialize Homebrew (important for some commands)
-eval (/opt/homebrew/bin/brew shellenv)
+if test -x /home/linuxbrew/.linuxbrew/bin/brew
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
 
-if type -q exa
-    alias ll "exa -laG --icons --classify --git --all --group-directories-first"
+if type -q eza
+    alias ll "eza -laG --icons --classify --git --all --group-directories-first"
 end
