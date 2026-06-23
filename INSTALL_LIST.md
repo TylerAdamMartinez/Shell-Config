@@ -1,143 +1,118 @@
-### Prerequisites
+# Install List
 
-Before installing the tools below, ensure you have **Cargo (Rust)** and **Fisher** installed.
+This repo is Rust-first for command-line tooling. If a reliable Rust CLI exists, prefer it over older C, Go, Python, or shell-based alternatives.
 
-#### 1. Install Cargo (Rust)
+## Bootstrap
 
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
-```
-
-#### Install all Cargo tools
-
-This repository includes a script that installs all required Cargo-based tools (using **cargo-binstall** when available for much faster installs) and updates all installed Cargo packages afterward.
+Install Rust, then run:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/TylerAdamMartinez/Shell-Config/current-setup/scripts/install-cargo-tools.sh | bash
+./scripts/bootstrap.sh
 ```
 
-The script installs the following tools:
-
-##### Cargo Utilities
-
-| Tool               | Description                                                                   |
-| ------------------ | ----------------------------------------------------------------------------- |
-| **cargo-binstall** | Downloads pre-built binaries instead of compiling from source when available. |
-| **cargo-update**   | Updates all installed Cargo packages.                                         |
-
-##### Shell Enhancements
-
-| Tool           | Description                                                   |
-| -------------- | ------------------------------------------------------------- |
-| **Zoxide**     | Smarter `cd` command for quickly jumping between directories. |
-| **Eza**        | Modern replacement for `ls`.                                  |
-| **Bat**        | Enhanced `cat` with syntax highlighting.                      |
-| **Starship**   | Fast, cross-shell prompt.                                     |
-| **Television** | Fast fuzzy finder and workspace navigator.                    |
-| **Yazi**       | Terminal-based file manager.                                  |
-
-##### Productivity & Navigation
-
-| Tool             | Description                                 |
-| ---------------- | ------------------------------------------- |
-| **Zellij**       | Terminal multiplexer.                       |
-| **Fd**           | Faster alternative to `find`.               |
-| **Ripgrep (rg)** | Extremely fast recursive text search.       |
-| **Procs**        | Modern replacement for `ps`.                |
-| **Oxker**        | Terminal UI for managing Docker containers. |
-
-##### Disk & System Tools
-
-| Tool       | Description                               |
-| ---------- | ----------------------------------------- |
-| **Dust**   | Visual disk usage analyzer.               |
-| **Bottom** | Modern system monitor and process viewer. |
-
-##### Development Tools
-
-| Tool         | Description                         |
-| ------------ | ----------------------------------- |
-| **Marksman** | Markdown language server for Helix. |
-| **Taplo**    | TOML formatter and language server. |
-
-Finally, the script automatically updates every installed Cargo package:
+For remote install:
 
 ```sh
-cargo install-update --all --locked
+curl -fsSL https://raw.githubusercontent.com/TylerAdamMartinez/Shell-Config/current-setup/scripts/bootstrap.sh | bash
 ```
 
-So your Cargo-based tools stay on their latest compatible versions.
+The canonical Cargo tool list lives in [Cargo.toml](./Cargo.toml) under:
 
+```toml
+[workspace.metadata.shell-config.cargo-tools]
+```
 
-### Essential Tools
-After installing **Cargo** and **Fisher**, install the following tools:
+## Cargo Tools
 
-### Shell Enhancements
-| Tool  | Description | Installation |
-|--------|------------|--------------|
-| | | |
+### Cargo Utilities
 
-### Productivity & Navigation
-| Tool  | Description | Installation |
-|--------|------------|--------------|
-| **Fzf** | Fuzzy file finder | `sudo apt install fzf` |
-| **Posting** | TUI for api requests testing | `brew install posting` |
-| **Ghq** | Repository manager | `brew install ghq` (macOS) / `go install github.com/x-motemen/ghq@latest` (Linux) |
-| **Peco** | Interactive filtering CLI tool | `brew install peco` (macOS) / `sudo apt install peco` (Linux) |
-| **ffprobe** | Inspect media metadata (part of FFmpeg) | `brew install ffmpeg` (macOS) / `sudo apt install ffmpeg` (Linux) |
-| **pdftoppm** | Convert PDF pages to images (PNG/JPEG) from Poppler | `brew install poppler` (macOS) / `udo apt install poppler-utils` (Linux) |
-| **Htop** | An interactive process viewer | `brew install htop` |
+| Tool | Purpose |
+| --- | --- |
+| `cargo-binstall` | Install prebuilt Cargo binaries when available |
+| `cargo-update` | Update installed Cargo binaries |
+| `cargo-edit` | Manage Cargo dependencies from the CLI |
+| `cargo-nextest` | Fast Rust test runner |
+| `cargo-watch` | Run Cargo commands when files change |
 
-### Node.js Version Manager
-| Tool  | Description | Installation |
-|--------|------------|--------------|
-| **NVM** | Node.js version manager | <code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \| bash</code> |
-| **NVM for Fish** | Fish-compatible NVM wrapper | `fisher install jorgebucaran/nvm.fish` |
+### Shell And Navigation
 
-### 🧬 Helix LSP Setup
+| Tool | Purpose |
+| --- | --- |
+| `zoxide` | Smarter `cd` |
+| `eza` | Rust replacement for `ls` |
+| `bat` | Rust replacement for `cat` |
+| `starship` | Cross-shell prompt |
+| `zellij` | Terminal workspace and multiplexer |
+| `fd-find` | Rust replacement for `find` |
+| `ripgrep` | Rust replacement for `grep` |
+| `ripgrep_all` | Search PDFs, archives, docs, and more with ripgrep |
+| `television` | Rust fuzzy finder and workspace navigator |
+| `skim` | Rust fuzzy finder for classic filter workflows |
+| `yazi-fm` | Terminal file manager |
+| `yazi-cli` | Yazi helper CLI |
 
-| Language  | LSP | Installation |
-|-----------|-----|-------------|
-| **C** | `clangd` | `sudo apt install clangd` (Linux) / `brew install llvm` (macOS) |
-| **C#** | `omnisharp` | `dotnet tool install --global omnisharp` |
-| **CSS** | `vscode-css-languageserver` | `npm install -g vscode-langservers-extracted` |
-| **Dockerfile** | `docker-langserver` | `npm install -g dockerfile-language-server-nodejs` |
-| **Fish** | `fish-language-server` | `npm install -g fish-lsp` |
-| **HTML** | `vscode-html-languageserver` | `npm install -g vscode-langservers-extracted` |
-| **Java** | `jdtls` | `brew install jdtls` (macOS) / Install via [Eclipse JDT Language Server](https://github.com/eclipse-jdtls/eclipse.jdt.ls) |
-| **JavaScript** | `typescript-language-server` | `npm install -g typescript typescript-language-server` |
-| **TypeScript** | `typescript-language-server` | `npm install -g typescript typescript-language-server` |
-| **JSON** | `vscode-json-languageserver` | `npm install -g vscode-langservers-extracted` |
-| **JSX/TSX** | `typescript-language-server` | `npm install -g typescript typescript-language-server` |
-| **Kotlin** | `kotlin-language-server` | `brew install kotlin-language-server` (macOS) / `sdk install kotlin` (Linux) |
-| **Python** | `ruff` | `pip install ruff` |
-| **Rust** | `rust-analyzer` | `rustup component add rust-analyzer` |
-| **YAML** | `yaml-language-server` | `npm install -g yaml-language-server` |
+### Development
 
-### Helix Formatter Setup
+| Tool | Purpose |
+| --- | --- |
+| `git-delta` | Better Git diff pager |
+| `just` | Project command runner |
+| `mise` | Runtime and tool version manager |
+| `sd` | Rust replacement for common `sed` substitutions |
+| `xh` | Rust HTTP client inspired by HTTPie |
+| `hyperfine` | Command-line benchmarking |
+| `tokei` | Code statistics |
+| `tealdeer` | Fast `tldr` client |
+| `choose` | Human-friendly `cut` and `awk` alternative |
+| `grex` | Generate regular expressions from examples |
 
-| Formatter  | Description | Installation Command |
-|------------|------------|-----------------------|
-| **Prettier** | Prettier is a versatile code formatter | `npm install -g prettier` |
+### System Tools
 
-### Installing Nerd Fonts
-Some tools require a **Nerd Font** for proper icon support.
+| Tool | Purpose |
+| --- | --- |
+| `procs` | Rust replacement for `ps` |
+| `bottom` | System monitor |
+| `du-dust` | Rust replacement for `du` |
+| `oxker` | Docker container TUI |
+| `macchina` | Rust system information fetcher |
 
-#### Steps to Install a Nerd Font
-1. **Download a Nerd Font** from [nerdfonts.com](http://nerdfonts.com/).
-2. **Unzip and move it** to your local font directory:
-   ```sh
-   mkdir -p ~/.fonts && mv [FONT_NAME].ttf ~/.fonts/
-   ```
-3. **Update the font cache**:
-   ```sh
-   fc-cache -fv
-   ```
-4. **Change your terminal font** to use the new Nerd Font.
+### Editor Support
 
---- 
+| Tool | Purpose |
+| --- | --- |
+| `marksman` | Markdown language server |
+| `taplo-cli` | TOML formatter and language server |
 
-### Final Step
-After installing everything, restart your terminal to ensure the changes take effect.
+## Optional Non-Cargo Dependencies
 
+Some tools are still best installed outside Cargo:
+
+| Tool | Purpose | Install |
+| --- | --- | --- |
+| `fish` | Shell | `brew install fish` or `sudo apt install fish` |
+| `ffmpeg` | Media tooling, including `ffprobe` | `brew install ffmpeg` or `sudo apt install ffmpeg` |
+| `poppler` | PDF tools, including `pdftoppm` | `brew install poppler` or `sudo apt install poppler-utils` |
+| `rust-analyzer` | Rust language server | `rustup component add rust-analyzer` |
+| `clangd` | C/C++ language server | `brew install llvm` or `sudo apt install clangd` |
+| `node` | JavaScript tooling and language servers | Prefer `mise use -g node@lts` after bootstrap |
+| `prettier` | JS/TS/HTML/CSS/Markdown formatter | `npm install -g prettier` |
+| `typescript-language-server` | JS/TS language server | `npm install -g typescript typescript-language-server` |
+| `vscode-langservers-extracted` | HTML/CSS/JSON language servers | `npm install -g vscode-langservers-extracted` |
+| `yaml-language-server` | YAML language server | `npm install -g yaml-language-server` |
+
+## Fonts
+
+Install a Nerd Font for icon support in `eza`, `starship`, `yazi`, and WezTerm. The current WezTerm config expects `0xProto Nerd Font`.
+
+Linux font install example:
+
+```sh
+mkdir -p ~/.fonts
+fc-cache -fv
+```
+
+macOS font install example:
+
+```sh
+brew install --cask font-0xproto-nerd-font
+```

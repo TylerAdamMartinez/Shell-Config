@@ -1,28 +1,44 @@
 # <p align="center"> [Tyler Adam Martinez's](https://github.com/TylerAdamMartinez) Shell Configuration
 
-### Setup
+Rust-first shell, editor, terminal, and Git configuration.
 
-#### Step 1. Install Fish Shell
+## Setup
 
-Open a terminal and run the following commands to install Fish:
+### 1. Install Fish
 
-```bash
+Linux:
+
+```sh
 sudo apt-get update
 sudo apt-get install fish
 ```
 
-#### Step 2. Set Fish as the Default Shell
+macOS:
 
-To set Fish as your default shell, use the following command:
-
-```bash
-chsh -s $(which fish)
+```sh
+brew install fish
 ```
 
-Close and reopen the terminal for the changes to take effect.
+Set Fish as the default shell:
 
-#### Step 3. Follow INSTALL_LIST.md
+```sh
+chsh -s "$(which fish)"
+```
 
-After installing Fish and setting it as the default shell, refer to the `INSTALL_LIST.md` file in this repository and follow the instructions there to complete the setup.
+### 2. Install Rust
 
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+```
+
+### 3. Bootstrap CLI Tools
+
+```sh
+./scripts/bootstrap.sh
+```
+
+The bootstrap script reads the Cargo tool list from [Cargo.toml](./Cargo.toml), installs tools with `cargo-binstall` when possible, falls back to `cargo install`, and updates installed Cargo binaries.
+
+See [INSTALL_LIST.md](./INSTALL_LIST.md) for the installed tools and optional non-Cargo dependencies.
 
