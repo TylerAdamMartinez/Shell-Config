@@ -1,73 +1,93 @@
 ### Prerequisites
-Before installing the tools below, ensure you have **Cargo** (Rust's package manager), **GitHub CLI (gh)**, and **Fisher** (Fish plugin manager) installed.
 
-#### **1. Install Cargo (Rust)**
-Cargo is needed to install many of the CLI tools.
+Before installing the tools below, ensure you have **Cargo (Rust)** and **Fisher** installed.
+
+#### 1. Install Cargo (Rust)
+
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
+source "$HOME/.cargo/env"
 ```
 
-#### **2. Install GitHub CLI (gh)**
-GitHub CLI is useful for interacting with GitHub from your terminal.
+#### Install all Cargo tools
 
-**Ubuntu / Pop!_OS / Debian-based:**
+This repository includes a script that installs all required Cargo-based tools (using **cargo-binstall** when available for much faster installs) and updates all installed Cargo packages afterward.
+
 ```sh
-type -p curl >/dev/null || sudo apt install curl -y
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
+curl -fsSL https://raw.githubusercontent.com/TylerAdamMartinez/Shell-Config/current-setup/scripts/install-cargo-tools.sh | bash
 ```
 
-**macOS:**
+The script installs the following tools:
+
+##### Cargo Utilities
+
+| Tool               | Description                                                                   |
+| ------------------ | ----------------------------------------------------------------------------- |
+| **cargo-binstall** | Downloads pre-built binaries instead of compiling from source when available. |
+| **cargo-update**   | Updates all installed Cargo packages.                                         |
+
+##### Shell Enhancements
+
+| Tool           | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| **Zoxide**     | Smarter `cd` command for quickly jumping between directories. |
+| **Eza**        | Modern replacement for `ls`.                                  |
+| **Bat**        | Enhanced `cat` with syntax highlighting.                      |
+| **Starship**   | Fast, cross-shell prompt.                                     |
+| **Television** | Fast fuzzy finder and workspace navigator.                    |
+| **Yazi**       | Terminal-based file manager.                                  |
+
+##### Productivity & Navigation
+
+| Tool             | Description                                 |
+| ---------------- | ------------------------------------------- |
+| **Zellij**       | Terminal multiplexer.                       |
+| **Fd**           | Faster alternative to `find`.               |
+| **Ripgrep (rg)** | Extremely fast recursive text search.       |
+| **Procs**        | Modern replacement for `ps`.                |
+| **Oxker**        | Terminal UI for managing Docker containers. |
+
+##### Disk & System Tools
+
+| Tool       | Description                               |
+| ---------- | ----------------------------------------- |
+| **Dust**   | Visual disk usage analyzer.               |
+| **Bottom** | Modern system monitor and process viewer. |
+
+##### Development Tools
+
+| Tool         | Description                         |
+| ------------ | ----------------------------------- |
+| **Marksman** | Markdown language server for Helix. |
+| **Taplo**    | TOML formatter and language server. |
+
+Finally, the script automatically updates every installed Cargo package:
+
 ```sh
-brew install gh
+cargo install-update --all --locked
 ```
 
-**Windows (Winget):**
-```powershell
-winget install --id GitHub.cli
-```
+So your Cargo-based tools stay on their latest compatible versions.
 
-#### **3. Install Fisher (Fish Plugin Manager)**
-Fisher is used to manage Fish shell plugins.
-```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
----
 
 ### Essential Tools
-After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the following tools:
+After installing **Cargo** and **Fisher**, install the following tools:
 
 ### Shell Enhancements
 | Tool  | Description | Installation |
 |--------|------------|--------------|
-| **Zoxide** | Smarter `cd` command (jump to directories quickly) | `cargo install zoxide` |
-| **Eza** | Modern `ls` replacement | `cargo install eza` |
-| **Bat** | Enhanced `cat` command | `cargo install bat` |
-| **Yazi** | TUI-based file explorer | `brew install yazi` | `cargo install --force yazi-build` |
-| **Starship** | Cross-shell prompt | `cargo install starship --locked` |
+| | | |
 
 ### Productivity & Navigation
 | Tool  | Description | Installation |
 |--------|------------|--------------|
-| **Zellij** | Terminal multiplexer | `cargo install zellij` |
 | **Fzf** | Fuzzy file finder | `sudo apt install fzf` |
-| **Fd** | Faster `find` alternative | `cargo install fd-find` |
-| **Ripgrep (rg)** | Faster search tool | `cargo install ripgrep` |
-| **Procs** | Modern process viewer | `cargo install procs` |
 | **Posting** | TUI for api requests testing | `brew install posting` |
-| **Oxker** | TUI for managing docker containers | `cargo install oxker` |
 | **Ghq** | Repository manager | `brew install ghq` (macOS) / `go install github.com/x-motemen/ghq@latest` (Linux) |
 | **Peco** | Interactive filtering CLI tool | `brew install peco` (macOS) / `sudo apt install peco` (Linux) |
 | **ffprobe** | Inspect media metadata (part of FFmpeg) | `brew install ffmpeg` (macOS) / `sudo apt install ffmpeg` (Linux) |
 | **pdftoppm** | Convert PDF pages to images (PNG/JPEG) from Poppler | `brew install poppler` (macOS) / `udo apt install poppler-utils` (Linux) |
 | **Htop** | An interactive process viewer | `brew install htop` |
-| **Dust** | visual representation of disk usage | `cargo install du-dust` |
-| **Bottom** | visual representation of disk usage | `cargo install bottom` |
 
 ### Node.js Version Manager
 | Tool  | Description | Installation |
@@ -91,10 +111,8 @@ After installing **Cargo**, **GitHub CLI**, and **Fisher**, install the followin
 | **JSON** | `vscode-json-languageserver` | `npm install -g vscode-langservers-extracted` |
 | **JSX/TSX** | `typescript-language-server` | `npm install -g typescript typescript-language-server` |
 | **Kotlin** | `kotlin-language-server` | `brew install kotlin-language-server` (macOS) / `sdk install kotlin` (Linux) |
-| **Markdown** | `marksman` | `brew install marksman` (macOS) / `cargo install marksman` (Linux) |
 | **Python** | `ruff` | `pip install ruff` |
 | **Rust** | `rust-analyzer` | `rustup component add rust-analyzer` |
-| **TOML** | `taplo` | `cargo install taplo-cli --features lsp` |
 | **YAML** | `yaml-language-server` | `npm install -g yaml-language-server` |
 
 ### Helix Formatter Setup
@@ -118,30 +136,7 @@ Some tools require a **Nerd Font** for proper icon support.
    ```
 4. **Change your terminal font** to use the new Nerd Font.
 
-### Configuración para Teclado Español
-
-| Aplicación  | Descripción                                        | Comando de instalación                                              |
-| ----------- | -------------------------------------------------- | ------------------------------------------------------------------- |
-| **Espanso** | Text expander for easy Spanish accents and phrases | `brew install espanso` (macOS) / `sudo apt install espanso` (Linux) |
-
-
-#### Espanso Configuration
-Once installed, you’ll need to set up Espanso with your preferred shortcuts.
-
-📌 Go to:  
-`~/.config/espanso/match/base.yml`  
-in this repository to get the common Spanish accents and phrase configurations I use.  
-
-After updating the `base.yml`, reload Espanso:
-
-```bash
-espanso restart
-```
-Now you'll be able to type accented letters and Spanish phrases with simple triggers (like :a → á, :gracias → ¡Gracias!).
-
-
 --- 
-
 
 ### Final Step
 After installing everything, restart your terminal to ensure the changes take effect.
