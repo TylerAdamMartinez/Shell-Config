@@ -25,6 +25,7 @@ yazi-cli = "Yazi helper CLI"
 
 # Git and development
 git-delta = "Better git diff pager"
+jj-starship = "Starship prompt module for Jujutsu repositories"
 just = "Command runner"
 mise = "Runtime and tool version manager"
 sd = "Rust replacement for sed-style substitutions"

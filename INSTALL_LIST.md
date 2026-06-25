@@ -56,6 +56,7 @@ The canonical Cargo tool list lives in [Cargo.toml](./Cargo.toml) under:
 | Tool | Purpose |
 | --- | --- |
 | `git-delta` | Better Git diff pager |
+| `jj-starship` | Starship prompt module for Jujutsu repositories |
 | `just` | Project command runner |
 | `mise` | Runtime and tool version manager |
 | `sd` | Rust replacement for common `sed` substitutions |
