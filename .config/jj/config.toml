@@ -1,0 +1,73 @@
+# ~/.config/jj/config.toml
+
+[user]
+name = "Tyler Adam Martinez"
+email = "TylerAdamMartinez@outlook.com"
+
+[ui]
+editor = "hx"
+color = "auto"
+diff-formatter = ":color-words"
+pager.command = ["less", "-FRX"]
+
+[git]
+# Keep jj repositories colocated with Git repositories so GitHub tools and Git
+# commands can keep working in the same checkout.
+colocate = true
+track-default-bookmark-on-clone = true
+write-change-id-header = true
+
+[revset-aliases]
+"trunk()" = "current-setup@origin"
+
+[aliases]
+# Git-style short commands.
+d = ["diff"]
+s = ["status"]
+ss = ["status"]
+st = ["status"]
+ll = ["log", "-r", "all()"]
+
+# jj's closest equivalents to Git branch/checkout workflows.
+b = ["bookmark"]
+ba = ["bookmark", "list", "--all-remotes"]
+co = ["edit"]
+
+# Commit and change-description workflow.
+cm = ["commit"]
+ci = ["commit"]
+desc = ["describe"]
+
+# There is no staging area in jj. These aliases keep the muscle memory useful:
+# `a`/`aa` snapshot the working copy, and `ap` interactively commits selected
+# changes from the current working-copy commit.
+a = ["status"]
+aa = ["status"]
+ap = ["commit", "--interactive"]
+
+# Git remote workflow through jj's Git backend.
+ph = ["git", "push"]
+pl = ["git", "fetch"]
+pp = ["util", "exec", "--", "sh", "-c", "jj git fetch && jj git push"]
+rpo = ["util", "exec", "--", "git", "remote", "prune", "origin"]
+open = ["util", "exec", "--", "gh", "repo", "view", "--web"]
+
+# Conflict helpers adapted from your Git aliases.
+edit-unmerged = [
+  "util",
+  "exec",
+  "--",
+  "sh",
+  "-c",
+  "files=$(jj resolve --list 2>/dev/null || true); [ -z \"$files\" ] || printf '%s\n' \"$files\" | while IFS= read -r path; do hx \"$path\"; done",
+]
+# jj snapshots resolved conflict edits automatically, so this shows anything
+# that still needs attention after editing.
+add-unmerged = [
+  "util",
+  "exec",
+  "--",
+  "sh",
+  "-c",
+  "jj resolve --list 2>/dev/null || true",
+]
