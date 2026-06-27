@@ -1,0 +1,31 @@
+[cli]
+installer = "internal"
+
+[ui]
+max_thoughts_width = 120
+fork_secondary_model = "grok-build"
+yolo = false
+compact_mode = false
+permission_mode = "ask"
+
+[marketplace]
+official_marketplace_auto_installed = true
+
+[[marketplace.sources]]
+name = "xAI Official"
+git = "https://github.com/xai-org/plugin-marketplace.git"
+
+[model.ollama-deepseek]
+model = "deepseek-r1:14b"
+base_url = "http://localhost:11434/v1"
+name = "DeepSeek R1 (Ollama)"
+context_window = 32000
+
+[model.ollama-gemma]
+model = "gemma4:e2b"
+base_url = "http://localhost:11434/v1"
+name = "Gemma 4 (Ollama)"
+context_window = 32000
+
+[models]
+default = "ollama-gemma"
