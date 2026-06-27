@@ -25,3 +25,8 @@ pipestatus = false
 pipestatus_separator = "|"
 pipestatus_format = '\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int]($style) '
 disabled = false
+
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship"]
+format = "$output "
