@@ -7,6 +7,7 @@ email = "TylerAdamMartinez@outlook.com"
 [ui]
 editor = "hx"
 color = "auto"
+default-command = "log"
 diff-formatter = ":color-words"
 pager.command = ["less", "-FRX"]
 
