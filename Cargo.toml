@@ -44,5 +44,6 @@ oxker = "Docker container TUI"
 macchina = "Rust system information fetcher"
 
 # Editor support
+fresh-editor = "Terminal-based text editor with LSP support"
 marksman = "Markdown language server"
 taplo-cli = "TOML formatter and language server"

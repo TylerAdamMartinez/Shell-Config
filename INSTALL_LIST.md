@@ -81,6 +81,7 @@ The canonical Cargo tool list lives in [Cargo.toml](./Cargo.toml) under:
 
 | Tool | Purpose |
 | --- | --- |
+| `fresh-editor` | Terminal-based text editor with LSP support |
 | `marksman` | Markdown language server |
 | `taplo-cli` | TOML formatter and language server |
 
