@@ -33,6 +33,11 @@ else if type -q fastfetch
     fastfetch
 end
 
+# Activate mise
+if type -q mise
+    mise activate fish | source
+end
+
 function update-tools --description 'Update Homebrew and Cargo-installed CLI tools'
     if type -q brew
         brew update
