@@ -20,6 +20,7 @@ ripgrep = "Rust replacement for grep"
 ripgrep_all = "Search PDFs, archives, docs, and more with ripgrep"
 television = "Rust fuzzy finder and workspace navigator"
 skim = "Rust fuzzy finder for classic filter workflows"
+shoka = "Rust repository manager"
 yazi-fm = "Terminal file manager"
 yazi-cli = "Yazi helper CLI"
 

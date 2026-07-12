@@ -42,6 +42,3 @@
 
 [github]
 	user = "TylerAdamMartinez"
-
-[ghq]
-	root = ~/.ghq
