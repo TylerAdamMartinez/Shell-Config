@@ -15,6 +15,10 @@ if type -q starship
     starship init fish | source
 end
 
+if type -q shoka
+    shoka init-shell fish | source
+end
+
 alias ll "ls -l"
 
 switch (uname)
