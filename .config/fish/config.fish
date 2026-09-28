@@ -19,17 +19,6 @@ if type -q shoka
     shoka init-shell fish | source
 end
 
-alias ll "ls -l"
-
-switch (uname)
-    case Darwin
-        source (dirname (status --current-filename))/config-osx.fish
-    case Linux
-        source (dirname (status --current-filename))/config-linux.fish
-    case '*'
-        source (dirname (status --current-filename))/config-windows.fish
-end
-
 # Run a system summary on startup, preferring Rust tools.
 if type -q macchina
     macchina
