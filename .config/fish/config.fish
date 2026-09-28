@@ -41,18 +41,3 @@ end
 if type -q mise
     mise activate fish | source
 end
-
-function update-tools --description 'Update Homebrew and Cargo-installed CLI tools'
-    if type -q brew
-        brew update
-        brew upgrade
-        brew upgrade --cask
-        brew cleanup
-    end
-
-    if type -q cargo; and type -q cargo-install-update
-        cargo install-update --all --locked
-    end
-
-    echo "Tool updates finished."
-end
