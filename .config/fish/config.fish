@@ -19,11 +19,8 @@ if type -q shoka
     shoka init-shell fish | source
 end
 
-# Run a system summary on startup, preferring Rust tools.
-if type -q macchina
+if status is-interactive; and type -q macchina
     macchina
-else if type -q fastfetch
-    fastfetch
 end
 
 # Activate mise
